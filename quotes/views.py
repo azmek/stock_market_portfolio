@@ -10,7 +10,7 @@ def index(request):
 
     if request.method == 'POST':
         ticker = request.POST['ticker']
-        api_request = requests.get("https://cloud.iexapis.com/stable/stock/"+ ticker + "/quote?token=pk_eb10836ac6294ee09ee6f10840694370")
+        api_request = requests.get("https://cloud.iexapis.com/stable/stock/"+ ticker + "/quote?token=YourKeyHere")
 
         try:
             api = json.loads(api_request.content)
