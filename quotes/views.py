@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Stock
 from .forms import StockForm
 from django.contrib import messages
-#Tpk_0958f018e82a451ba61f5f42b16f82e8
+
 def index(request):
     #connect to the API
     import requests 
@@ -39,7 +39,7 @@ def add_stock(request):
         ticker = Stock.objects.all()
         output = []
         for ticker_item in ticker:
-            api_request = requests.get("https://cloud.iexapis.com/stable/stock/"+ str(ticker_item) + "/quote?token=pk_eb10836ac6294ee09ee6f10840694370")
+            api_request = requests.get("https://cloud.iexapis.com/stable/stock/"+ str(ticker_item) + "/quote?token=Yourkeyhere")
 
             try:
                 api = json.loads(api_request.content)
